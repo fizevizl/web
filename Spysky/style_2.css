@@ -1,0 +1,67 @@
+/* Марковані списки */
+#ul1 {
+    list-style-type: square;
+    color: darkgreen;
+}
+
+#ul2 {
+    list-style-type: circle;
+    color: navy;
+}
+
+#ul3 {
+    list-style-type: disc;
+    color: maroon;
+}
+
+/* Нумеровані списки */
+#ol1 {
+    list-style-type: upper-roman;
+    color: darkblue;
+}
+
+#ol2 {
+    list-style-type: decimal-leading-zero;
+    color: darkred;
+}
+
+#ol3 {
+    list-style-type: lower-alpha;
+    color: teal;
+}
+
+#ul-image {
+    list-style-image: url('image.png');
+    font-size: 14pt;
+    margin-left: 30px;
+}
+
+#small-box {
+    width: 150px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.custom-counter {
+    list-style-type: none;       /* прибирає стандартні маркери */
+    counter-reset: item;         /* скидає лічильник */
+    padding-left: 0;
+}
+
+.custom-counter li {
+    counter-increment: item;     /* збільшує лічильник */
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.custom-counter li::before {
+    content: "A." counter(item) ". ";  /* формат: A.1, A.2, ... */
+    position: absolute;
+    left: 0;
+    color: darkblue;
+    font-weight: bold;
+}
+

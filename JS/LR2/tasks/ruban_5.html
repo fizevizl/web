@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Введення тексту з перевіркою</title>
+  <script>
+    let initialText = ""; // Зберігає текст, доданий через кнопку
+
+    // Додає текст із prompt до поля
+    function addText() {
+      const userInput = prompt("Введіть текст:", "");
+      if (userInput !== null) {
+        document.getElementById("textField").value = userInput;
+        initialText = userInput; // Зберігаємо як "офіційний" текст
+      }
+    }
+
+    // Перевіряє, чи текст було змінено вручну
+    function checkChange() {
+      const currentText = document.getElementById("textField").value;
+      if (currentText !== initialText) {
+        alert("Текст було змінено вручну!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Введення тексту через діалог</h2>
+  <button onclick="addText()">Додати текст</button><br><br>
+  <input type="text" id="textField" size="50" onchange="checkChange()">
+</body>
+</html>

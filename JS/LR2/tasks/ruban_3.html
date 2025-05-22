@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Множення чисел і закриття вікна</title>
+  <script language="JavaScript">
+    function exit() {
+      var a = window.confirm("Бажаєте закрити вікно?");
+      if (a === true) {
+        window.close();
+      }
+    }
+
+    function multiplyNumbers(form) {
+      var num1 = parseFloat(form.num1.value);
+      var num2 = parseFloat(form.num2.value);
+
+      if (isNaN(num1) || isNaN(num2)) {
+        form.result.value = "Введіть числа!";
+      } else {
+        form.result.value = num1 * num2;
+      }
+    }
+  </script>
+</head>
+<body>
+  <form name="Form1">
+    <font size="3">
+      <p><b>Множення двох чисел</b></p>
+      Введіть перше число: <input type="text" name="num1"><br><br>
+      Введіть друге число: <input type="text" name="num2"><br><br>
+      Результат множення: <input type="text" name="result" readonly><br><br>
+
+      <input type="button" value="Обчислити" onclick="multiplyNumbers(this.form)">
+      <input type="button" value="Закрити вікно" onclick="exit()">
+    </font>
+  </form>
+</body>
+</html>

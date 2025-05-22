@@ -1,0 +1,59 @@
+#menu {
+    width: 140px;
+    border: 4px double #8B0000;
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(to bottom, #fbeec1, #f5deb3);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+#menu a {
+    color: #8B0000;
+    font-family: "Trebuchet MS", fantasy;
+    text-decoration: none;
+    display: block;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#menu a:hover {
+    color: white;
+    background-color: #8B0000;
+    transform: scale(1.05);
+}
+
+/* Підменю */
+#pon, #viv, #ser, #chet, #pyat {
+    background: oldlace;
+    border: 3px inset darkred;
+    position: absolute;
+    left: 170px;
+    top: 30px;
+    width: 160px;
+    visibility: hidden;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+#pon a, #viv a, #ser a, #chet a, #pyat a {
+    display: block;
+    color: darkred;
+    font-family: fantasy;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+#pon a:hover, #viv a:hover, #ser a:hover, #chet a:hover, #pyat a:hover {
+    color: oldlace;
+    background-color: darkred;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Вставка тексту за допомогою JavaScript</title>
+    <head>
+    <meta charset="UTF-8">
+    <title>JavaScript: Функції та змінні</title>
+
+    <script language="JavaScript">
+        <!--
+        // Задаємо змінну з унікальним ім'ям (ваше прізвище)
+        var PrizvysheZminna = "Необхідний текст (виведений через функцію)";
+        
+        // Оголошення функції, яка виведе цю змінну
+        function printPrizvysheMsg() {
+            document.write(PrizvysheZminna);
+        }
+        // -->
+    </script>
+
+    <script>
+        function printMsgAlert() {
+            alert("Необхідний текст (повідомлення через alert)");
+        }
+    </script>
+
+    <script>
+        function printHello() {
+            let VstupSpovish = prompt("Введіть сповіщення:", "Цей текст можна редагувати");
+            document.write("Ви ввели: " + VstupSpovish);
+        }
+    </script>
+
+</head>
+</head>
+<body>
+
+<a href="#" onmouseout="document.getElementById('msg').innerText='Мені  вдалося!!!';">
+    Наведіть мишку
+</a>
+<div id="msg" style="margin-top: 10px; font-weight: bold;"></div>
+
+<a href="#" onclick="askNameAndConfirm()">Введіть ПІБ</a>
+
+<script>
+function askNameAndConfirm() {
+    let name = prompt("Введіть Ваші ПІБ:", "");
+    if (name !== null && name.trim() !== "") {
+        let confirmMsg = confirm("Ви ввели наступні дані: " + name + "\nНатисніть OK для підтвердження.");
+        if (confirmMsg) {
+            document.body.innerHTML += "<p>Ваші ПІБ: " + name + "</p>";
+        }
+    }
+}
+</script>
+
+
+<!-- Вставка тексту першим способом -->
+<p id="first"></p>
+
+<!-- Вставка другим способом -->
+<script language="JavaScript">
+    document.write("Цей текст виведено другим способом для другого способу.<br>");
+</script>
+
+<!-- Третій спосіб (через innerHTML) -->
+<div id="third"></div>
+
+<script language="JavaScript">
+    // Перший спосіб – через доступ до елемента
+    document.getElementById("first").innerText = "Цей текст виведено першим способом для першого способу.";
+
+    // Третій спосіб – зміна HTML вмісту
+    document.getElementById("third").innerHTML = "Цей текст виведено третім способом для третього способу.";
+</script>
+
+<!-- Альтернативна форма запису з обгортанням для сумісності -->
+<script language="JavaScript">
+<!--
+document.write("Цей текст виведено для браузерів, що підтримують стару форму запису.<br>");
+//-->
+</script>
+
+<script language="JavaScript" src="script.js"></script>
+
+<h2>Нижче результат виконання скрипта:</h2>
+
+<script language="JavaScript">
+        // Виклик функції для виводу змінної
+    printPrizvysheMsg();
+        // >
+</script>
+
+<script>
+    printMsgAlert(); // виклик функції alert
+</script>
+
+<script>
+    printHello(); // виклик функції prompt
+</script>
+
+</body>
+
+<head>
+  <title>Приклад перетворення типів даних</title>
+</head>
+<body>
+  <table>
+    <script language="JavaScript">
+      // Змінна Text — просто текст
+      var Text = "7" + " число сім<br>";
+
+      // Змінна Text2 — перетворення "3" в число і додавання 4
+      var Text2 = (parseInt("3") + 4) + " число сім<br>";
+
+      // Виведення обох змінних
+      document.write(Text + Text2);
+    </script>
+  </table>
+</body>
+
+</html>

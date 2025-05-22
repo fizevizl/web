@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+#baner {
+    width: 30%;
+    background: lightgray;
+    height: 100%;
+    float: right;
+}
+
+#head1 {
+    background: gray;
+    width: 120px;
+    height: 100px;
+    float: left;
+    border: 1px solid brown;
+    overflow: auto; /* дозволяє прокручувати, якщо текст перевищує розмір */
+    padding: 5px;
+    font-size: 10px;
+}
+
+
+#head2 {
+    background: gray;
+    height: 100px;
+    margin-left: 120px; /* відступ для логотипа */
+    border: 1px solid brown;
+}
+
+#menu {
+    background: oldlace;
+    width: 190px;
+    float: left;
+    height: 80%;
+    border: 1px solid brown;
+}
+
+#cont {
+    background: oldlace;
+    height: 80%;
+    margin-left: 190px; /* відступ для меню */
+        border: 1px solid brown;
+}
+
+#copy {
+    background: gray;
+    clear: both;
+    height: 30%;
+    border: 1px solid brown;
+}
+
+#menu a {
+    color: darkred;
+    text-decoration: none;
+    display: block; /* відображає посилання як блоки */
+    padding: 8px;
+}
+
+#menu a:hover {
+    color: oldlace;
+    background: silver;
+}

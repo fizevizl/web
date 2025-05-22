@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Розв'язання квадратного рівняння</title>
+  <script>
+    function solveEquation() {
+      // Отримуємо значення з полів
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+      const c = parseFloat(document.getElementById("c").value);
+
+      const result = document.getElementById("result");
+
+      // Перевірка, що a ≠ 0
+      if (a === 0) {
+        result.innerHTML = "Це не квадратне рівняння (a не може бути 0)";
+        return;
+      }
+
+      const discriminant = b * b - 4 * a * c;
+      let x1, x2;
+
+      if (discriminant > 0) {
+        x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        result.innerHTML = `Два дійсні корені: x₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}`;
+      } else if (discriminant === 0) {
+        x1 = -b / (2 * a);
+        result.innerHTML = `Один дійсний корінь: x = ${x1.toFixed(2)}`;
+      } else {
+        result.innerHTML = "Немає дійсних коренів (дискримінант < 0)";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Розв'язання квадратного рівняння</h2>
+  <p>Введіть коефіцієнти рівняння ax² + bx + c = 0:</p>
+
+  <label for="a">a: </label>
+  <input type="number" id="a" step="any"><br><br>
+
+  <label for="b">b: </label>
+  <input type="number" id="b" step="any"><br><br>
+
+  <label for="c">c: </label>
+  <input type="number" id="c" step="any"><br><br>
+
+  <button onclick="solveEquation()">Знайти корені</button>
+
+  <p id="result" style="margin-top: 20px; font-weight: bold;"></p>
+</body>
+</html>

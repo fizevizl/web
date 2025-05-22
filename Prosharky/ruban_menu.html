@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Створення прошарків в CSS</title>
+    <link rel="stylesheet" type="text/css" href="style_3.css">
+</head>
+
+<body>
+<div id="menu">
+    <a href="#" onmouseover="showSubmenu('pon')" onmouseout="hideSubmenu('pon')">Понеділок</a>
+    <a href="#" onmouseover="showSubmenu('viv')" onmouseout="hideSubmenu('viv')">Вівторок</a>
+    <a href="#" onmouseover="showSubmenu('ser')" onmouseout="hideSubmenu('ser')">Середа</a>
+    <a href="#" onmouseover="showSubmenu('chet')" onmouseout="hideSubmenu('chet')">Четвер</a>
+    <a href="#" onmouseover="showSubmenu('pyat')" onmouseout="hideSubmenu('pyat')">П'ятниця</a>
+</div>
+
+<div id="pon" onmouseover="showSubmenu('pon')" onmouseout="hideSubmenu('pon')">
+    <a href="#" onclick="showInfo('Інформатика', 'Іваненко І.І.', 'ауд. 101')">Інформатика</a>
+    <a href="#" onclick="showInfo('Математика', 'Петрова О.О.', 'ауд. 202')">Математика</a>
+    <a href="#" onclick="showInfo('Фізкультура', 'Коваль С.С.', 'спортзал')">Фізкультура</a>
+</div>
+
+
+<div id="viv" onmouseover="showSubmenu('viv')" onmouseout="hideSubmenu('viv')">
+    <a href="#">Українська мова</a>
+    <a href="#">Історія</a>
+    <a href="#">Алгебра</a>
+</div>
+
+<div id="ser" onmouseover="showSubmenu('ser')" onmouseout="hideSubmenu('ser')">
+    <a href="#">Біологія</a>
+    <a href="#">Хімія</a>
+    <a href="#">Фізика</a>
+</div>
+
+<div id="chet" onmouseover="showSubmenu('chet')" onmouseout="hideSubmenu('chet')">
+    <a href="#">Географія</a>
+    <a href="#">Трудове</a>
+    <a href="#">Інформатика</a>
+</div>
+
+<div id="pyat" onmouseover="showSubmenu('pyat')" onmouseout="hideSubmenu('pyat')">
+    <a href="#">Зарубіжна</a>
+    <a href="#">Англійська</a>
+    <a href="#">Фізкультура</a>
+</div>
+
+<script>
+function showSubmenu(id) {
+    document.getElementById(id).style.visibility = 'visible';
+}
+function hideSubmenu(id) {
+    document.getElementById(id).style.visibility = 'hidden';
+}
+</script>
+
+<div id="info" style="margin-left: 200px; margin-top: 20px; padding: 10px; border: 2px solid darkred; width: 300px; background: oldlace;">
+    <strong>Інформація про предмет:</strong>
+    <p>Натисніть на предмет, щоб побачити викладача та аудиторію.</p>
+</div>
+
+<script>
+function showInfo(subject, teacher, room) {
+    const info = document.getElementById('info');
+    info.innerHTML = `<strong>${subject}</strong><br>Викладач: ${teacher}<br>Аудиторія: ${room}`;
+}
+</script>
+
+
+</body>
+</html>

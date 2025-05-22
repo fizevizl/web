@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Обчислення квадрата</title>
+  <script language="JavaScript">
+    function fct(obj) {
+      var a = parseFloat(obj.a1.value);
+
+      if (!isNaN(a)) {
+        var square = a * a;
+        var diagonal = a * Math.sqrt(2);
+        obj.a2.value = square.toFixed(2);
+        obj.d1.value = diagonal.toFixed(2);
+      } else {
+        obj.a2.value = "";
+        obj.d1.value = "";
+      }
+    }
+  </script>
+</head>
+<body>
+  <form name="Form1">
+    <font size="3">
+      Сторона квадрата:
+      <input type="text" size="6" name="a1" oninput="fct(this.form)"><br><br>
+
+      Площа (S):
+      <input type="text" size="6" name="a2" readonly><br><br>
+
+      Довжина діагоналі:
+      <input type="text" size="6" name="d1" readonly>
+    </font>
+  </form>
+</body>
+</html>

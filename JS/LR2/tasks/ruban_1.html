@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Перевірка віку</title>
+  <script language="JavaScript">
+    function Age() {
+      var age = parseInt(document.form1.age.value);
+      var pib = document.form1.pib.value;
+
+      if (isNaN(age)) {
+        alert("Введіть, будь ласка, коректний вік.");
+        return;
+      }
+
+      if (age < 18) {
+        alert("Вам не виповнилось 18 років");
+      } else {
+        // Відкриває нову сторінку з ПІБ
+        var newWindow = window.open("", "_blank");
+        newWindow.document.write("<h2>Ваші ПІБ: " + pib + "</h2>");
+        newWindow.document.close();
+      }
+    }
+  </script>
+</head>
+<body>
+  <form name="form1">
+    <label>ПІБ:</label>
+    <input type="text" name="pib" required><br><br>
+
+    <label>Вік:</label>
+    <input type="text" name="age" onblur="Age()">
+  </form>
+</body>
+</html>

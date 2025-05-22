@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Реєстрація ПІБ</title>
+  <script language="JavaScript">
+    function openNewPageWithPIB(form) {
+      var lastName = form.lastName.value.trim();
+      var firstName = form.firstName.value.trim();
+      var middleName = form.middleName.value.trim();
+
+      if (!lastName || !firstName || !middleName) {
+        alert("Будь ласка, заповніть усі поля ПІБ.");
+        return;
+      }
+
+      var fullName = lastName + "." + firstName + "." + middleName;
+
+      // Відкриваємо нову сторінку з ПІБ
+      var newWindow = window.open("", "_blank");
+      newWindow.document.write("<html><head><title>Результат</title></head><body>");
+      newWindow.document.write("<h2>Ваші ПІБ:</h2>");
+      newWindow.document.write("<p>" + fullName + "</p>");
+      newWindow.document.write("</body></html>");
+    }
+  </script>
+</head>
+<body>
+  <h3>Введіть Ваші ПІБ:</h3>
+  <form name="form1">
+    Прізвище: <input type="text" name="lastName" size="30"><br><br>
+    Ім'я: <input type="text" name="firstName" size="30"><br><br>
+    По батькові: <input type="text" name="middleName" size="30"><br><br>
+
+    <input type="button" value="Показати ПІБ" onClick="openNewPageWithPIB(this.form)">
+  </form>
+</body>
+</html>

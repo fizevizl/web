@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Обмін валют</title>
+  <script>
+    function convertCurrency() {
+      const rate = parseFloat(document.getElementById("rate").value);
+      const amount = parseFloat(document.getElementById("amount").value);
+      const result = document.getElementById("result");
+
+      if (isNaN(rate) || isNaN(amount)) {
+        result.innerHTML = "Введіть коректні значення!";
+        return;
+      }
+
+      const converted = amount * rate;
+      result.innerHTML = `Отримаєте: ${converted.toFixed(2)} UAH`;
+    }
+  </script>
+</head>
+<body>
+  <h2>Конвертер валют (USD → UAH)</h2>
+  <label>Курс долара (1 USD = ? UAH):</label>
+  <input type="number" id="rate" step="0.01"><br><br>
+
+  <label>Сума в USD:</label>
+  <input type="number" id="amount" step="0.01"><br><br>
+
+  <button onclick="convertCurrency()">Конвертувати</button>
+  <p id="result"></p>
+</body>
+</html>

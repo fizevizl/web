@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Рухомий текст</title>
+  <script>
+    let fullText = "ПІБ: Іваненко Іван Іванович ";
+    let currentIndex = 0;
+    let displayText = "";
+
+    function animateText() {
+      displayText += fullText[currentIndex];
+      document.getElementById("textField").value = displayText;
+      currentIndex++;
+
+      if (currentIndex >= fullText.length) {
+        currentIndex = 0;
+        displayText = "";
+      }
+
+      setTimeout(animateText, 200);
+    }
+
+    window.onload = animateText;
+  </script>
+</head>
+<body>
+  <h2>Рухомий рядок</h2>
+  <input type="text" id="textField" size="50" readonly>
+</body>
+</html>
