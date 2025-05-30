@@ -1,0 +1,11 @@
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+textarea {
+  width: 100%;
+}
+input[type="text"], input[type="password"] {
+  width: 100%;
+}

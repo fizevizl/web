@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Переключатели checkbox и radio</title>
+    <script>
+        var bTitle = false;
+        var bHorzLine = false;
+        var bTable = false;
+        var szColor = "Red";
+
+        function sbros_otmetok() {
+            bTitle = false;
+            bHorzLine = false;
+            bTable = false;
+            szColor = "Red";
+        }
+
+        function chkRadio(form, value) {
+            szColor = value;
+        }
+
+        function btnClick(form) {
+            var szTxt = "";
+            document.write("<html><head><title>Output</title></head><body>");
+
+            if (bTitle)
+                document.write("<h1>Switches Checkbox and Radio</h1>");
+            if (bHorzLine)
+                document.write("<hr>");
+
+            if (bTable) {
+                document.write("<table border='1'>");
+                szTxt = "" + bTitle;
+                document.write("<tr><td><font color='" + szColor + "'>Title:</td><td>" + szTxt.bold() + "</td></tr>");
+                szTxt = "" + bHorzLine;
+                document.write("<tr><td><font color='" + szColor + "'>HorzLine:</td><td>" + szTxt.bold() + "</td></tr>");
+                szTxt = "" + bTable;
+                document.write("<tr><td><font color='" + szColor + "'>Table:</td><td>" + szTxt.bold() + "</td></tr>");
+                document.write("<tr><td><font color='" + szColor + "'>Color:</td><td>" + szColor.bold() + "</td></tr>");
+                document.write("</table>");
+            } else {
+                document.write("<font color='" + szColor + "'>");
+                szTxt = "" + bTitle;
+                document.write("<br>Title: " + szTxt.bold());
+                szTxt = "" + bHorzLine;
+                document.write("<br>HorzLine: " + szTxt.bold());
+                szTxt = "" + bTable;
+                document.write("<br>Table: " + szTxt.bold());
+                document.write("<br>Color: " + szColor.bold());
+                document.write("</font>");
+            }
+
+            if (bHorzLine)
+                document.write("<hr>");
+
+            document.write("</body></html>");
+        }
+    </script>
+</head>
+<body>
+    <form name="myform">
+        <b>Page elements:</b><br><br>
+
+        <input type="checkbox" name="chkTitle" onclick="bTitle = this.checked;"> Show title<br>
+        <input type="checkbox" name="chkHorzLine" onclick="bHorzLine = this.checked;"> Show horizontal lines<br>
+        <input type="checkbox" name="chkTable" onclick="bTable = this.checked;"> Table view<br><br>
+
+        <b>Text color:</b><br>
+        <input type="radio" name="Color" value="Red" checked onclick="chkRadio(this.form, this.value);"> Red<br>
+        <input type="radio" name="Color" value="Green" onclick="chkRadio(this.form, this.value);"> Green<br>
+        <input type="radio" name="Color" value="Blue" onclick="chkRadio(this.form, this.value);"> Blue<br><br>
+
+        <table>
+            <tr>
+                <td>
+                    <input type="button" name="btn" value="Create Page" onclick="btnClick(this.form);">
+                </td>
+                <td>
+                    <input type="reset" name="resetBtn" value="Reset" onclick="sbros_otmetok();">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
